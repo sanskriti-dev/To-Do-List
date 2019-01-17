@@ -76,7 +76,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<!--<link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\">-->\n");
       out.write("\t<!-- <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\"> -->\n");
       out.write("\t<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">\n");
-      out.write("\t<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js\" ></script>\n");
+      out.write("        <script>\n");
+      out.write("            function check()\n");
+      out.write("            {\n");
+      out.write("                var c=document.getElementById(\"todo\");\n");
+      out.write("                 if(c.value==\"\")\n");
+      out.write("                {\n");
+      out.write("                    alert(\" ToDo Cannot be Empty\");\n");
+      out.write("                    todo.focus();\n");
+      out.write("                    return false;\n");
+      out.write("                }\n");
+      out.write("                \n");
+      out.write("            }\n");
+      out.write("        </script>\n");
       out.write("        <style type=\"text/css\" >\n");
       out.write("            .container{\n");
       out.write("\twidth: 40%;\n");
@@ -150,10 +162,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_sql_setDataSource_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("    <form method=\"POST\" action=\"insert.jsp\" >\n");
+      out.write("    <form  class=\"form-group\" method=\"POST\" action=\"insert.jsp\" onsubmit=\"return check()\" >\n");
       out.write("        <div class=\"container\">\n");
       out.write("\t\t<h1 id=\"rr\"> <i class=\"fas  fa-list-ul\"></i> TO  DOS</h1>\n");
-      out.write("        <input id=\"rr\" type=\"text\" placeholder=\"Enter a new To-Do\" name=\"todos\">\n");
+      out.write("        <input id=\"todo\" type=\"text\" placeholder=\"Enter a new To-Do\" name=\"todos\" >\n");
       out.write("                ");
       if (_jspx_meth_sql_query_0(_jspx_page_context))
         return;
@@ -295,7 +307,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
             return true;
           out.write("  <a href =\"delete?param1=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.todos}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\"><i class=\"far fa-trash-alt\"></i></a></li>\n");
+          out.write("\"><i class=\"far fa-trash-alt\" ></i></a></li>\n");
           out.write("\t\t    </ul>\n");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
