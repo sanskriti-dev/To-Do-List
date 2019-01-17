@@ -105,7 +105,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\tfont-weight: normal;\n");
       out.write("\tcolor: white;\n");
       out.write("}\n");
-      out.write("\n");
+      out.write(".id1{\n");
+      out.write("    color:black;\n");
+      out.write("}\n");
       out.write("i{\n");
       out.write("\tfont-size: 80%;\n");
       out.write("\tcursor: pointer;\n");
@@ -150,7 +152,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("    <form method=\"POST\" action=\"insert.jsp\" >\n");
       out.write("        <div class=\"container\">\n");
-      out.write("\t\t<h1 id=\"rr\"> <i class=\"fas  fa-list-ul\"></i> TODOS</h1>\n");
+      out.write("\t\t<h1 id=\"rr\"> <i class=\"fas  fa-list-ul\"></i> TO  DOS</h1>\n");
       out.write("        <input id=\"rr\" type=\"text\" placeholder=\"Enter a new To-Do\" name=\"todos\">\n");
       out.write("                ");
       if (_jspx_meth_sql_query_0(_jspx_page_context))
@@ -159,7 +161,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("<input type=\"submit\" value=\"submit\" name=\"submit\" />\n");
+      out.write("<input class=\"id1\" type=\"submit\" value=\"SUBMIT\" name=\"submit\" />\n");
       out.write("\t</div>\n");
       out.write("    </form>\n");
       out.write("\n");
@@ -287,7 +289,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\n");
           out.write("                   <ul>\n");
-          out.write("                       <li>");
+          out.write("                       \n");
+          out.write("                <li>");
           if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write("  <a href =\"delete?param1=");

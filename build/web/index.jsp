@@ -38,7 +38,9 @@ h1{
 	font-weight: normal;
 	color: white;
 }
-
+.id1{
+    color:black;
+}
 i{
 	font-size: 80%;
 	cursor: pointer;
@@ -83,17 +85,18 @@ url = "jdbc:mysql://localhost:3309/d1"
 user = "root" password = "123456"/>
     <form method="POST" action="insert.jsp" >
         <div class="container">
-		<h1 id="rr"> <i class="fas  fa-list-ul"></i> TODOS</h1>
+		<h1 id="rr"> <i class="fas  fa-list-ul"></i> TO  DOS</h1>
         <input id="rr" type="text" placeholder="Enter a new To-Do" name="todos">
                 <sql:query dataSource = "${db}" var = "result">
 SELECT * from todo;
 </sql:query>
 <c:forEach var = "row" items = "${result.rows}">
                    <ul>
-                       <li><c:out value = "${row.todos}"/>  <a href ="delete?param1=${row.todos}"><i class="far fa-trash-alt"></i></a></li>
+                       
+                <li><c:out value = "${row.todos}"/>  <a href ="delete?param1=${row.todos}"><i class="far fa-trash-alt"></i></a></li>
 		    </ul>
 </c:forEach>
-<input type="submit" value="submit" name="submit" />
+<input class="id1" type="submit" value="SUBMIT" name="submit" />
 	</div>
     </form>
 
